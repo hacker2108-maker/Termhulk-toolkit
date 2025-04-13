@@ -73,12 +73,16 @@ while true; do
             cd sqlmap && python sqlmap.py --wizard
             ;;
         6)
-            echo -e "\n${YELLOW}[*] OSINT Recon${NC}"
-            git clone https://github.com/sherlock-project/sherlock
-            cd sherlock && python3 -m pip install -r requirements.txt
-            read -p "Enter target username: " username
-            python3 sherlock.py $username
-            ;;
+    echo -e "\n${YELLOW}[*] OSINT Recon${NC}"
+    if [ ! -d "sherlock" ]; then
+        git clone https://github.com/sherlock-project/sherlock
+    fi
+    cd sherlock
+    pip install -r ../requirements.txt || python3 -m pip install -r ../requirements.txt
+    read -p "Enter target username: " username
+    python3 sherlock.py $username
+    cd ..
+    ;;
         7)
             echo -e "${RED}[!] Exiting...${NC}"
             exit 0
