@@ -36,8 +36,8 @@ pkg install git python bash -y
 
 2. Cloner le dépôt
 
-git clone https://github.com/votre-utilisateur/termhulk.git
-cd termhulk
+git clone https://github.com/hacker2108-maker/Termhulk-toolkit.git
+cd Termhulk-toolkit
 chmod +x Termhulk.sh
 
 3. Lancer le script
